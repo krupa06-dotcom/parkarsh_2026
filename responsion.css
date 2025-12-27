@@ -1,0 +1,95 @@
+.nav {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  margin-right: 16px;
+  font-size: 12px;
+}
+
+.nav-right span {
+  font-size: 14px;
+}
+.logo {
+  width: clamp(120px, 30vw, 190px);
+}
+
+.metal-sub {
+  font-size: clamp(12px, 2.5vw, 16px);
+}
+
+.coming {
+  font-size: clamp(14px, 3vw, 20px);
+}
+@media (max-width: 768px) {
+
+  .nav {
+    padding: 0 15px;
+  }
+
+  .nav-left a {
+    margin-right: 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .content {
+    padding: 0 15px;
+  }
+
+  .title {
+    letter-spacing: 2px;
+  }
+
+  .metal-sub {
+    margin-top: 8px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .cta {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+
+  /* Reduce rocket size */
+  .rocket {
+    width: 80px;
+    opacity: 0.7;
+  }
+}
+@media (max-width: 480px) {
+
+  .nav-left {
+    display: none; /* cleaner hero */
+  }
+
+  .logo {
+    width: 110px;
+  }
+
+  .title {
+    font-size: 2.1rem;
+  }
+
+  .metal-sub {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .coming {
+    letter-spacing: 3px;
+  }
+
+  .rocket {
+    display: none; /* avoid clutter */
+  }
+}

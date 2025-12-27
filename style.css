@@ -1,0 +1,203 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Navigation */
+.nav {
+  position: absolute;
+  top: 25px;
+  width: 100%;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 20;
+}
+
+.nav a {
+  margin-right: 24px;
+  text-decoration: none;
+  color: #ffffffcc;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.nav a:hover {
+  color: #00f0ff;
+}
+
+.nav-right span {
+  margin-left: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url("images/dark_sky.png") center/cover no-repeat;
+  overflow: hidden;
+}
+
+/* Space movement */
+@keyframes spaceDrift {
+  from { background-position: 0 0; }
+  to { background-position: 0 2000px; }
+}
+
+/* Center content */
+.content {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  width: 190px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 25px rgba(0,240,255,0.7));
+}
+    
+/* TITLE WITH BORDER */
+.title {
+  position: relative;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: transparent;
+
+  background: linear-gradient(180deg, #d3cfcf, #aec6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  text-shadow: 0 0 50px rgba(228, 214, 19, 0.25);
+}
+
+/* TEXT BORDER (STROKE LAYER) */
+.title::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
+  z-index: -1;
+}
+
+/* Subtitle */
+.metal-sub {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+
+
+/* Coming soon */
+.coming {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  opacity: 0.6;
+  margin: 20px;
+}
+
+/* CTA */
+.cta {
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #00f0ff, #0066ff);
+  color: #000;
+  box-shadow: 0 0 25px rgba(0,240,255,0.7);
+  transition: transform 0.3s ease;
+}
+
+.cta:hover {
+  transform: scale(1.08);
+}
+
+/* Rockets */
+.rocket {
+  position: absolute;
+  width: 120px;
+  opacity: 0;
+  filter: drop-shadow(0 0 15px rgba(255,140,80,0.9));
+}
+
+/* Rocket paths */
+.r1 {
+  top: 35%;
+  left: -30%;
+  transform: rotate(25deg);
+  animation: fly1 7s ease-in-out infinite;
+}
+
+@keyframes fly1 {
+  0% { left: -30%; opacity: 0; }
+  20% { opacity: 1; }
+  50% { left: 45%; top: 50%; }
+  100% { left: 130%; top: 65%; opacity: 0; }
+}
+
+.r2 {
+  bottom: -35%;
+  left: 50%;
+  transform: rotate(-90deg);
+  animation: launch 6s ease-in infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes launch {
+  0% { bottom: -35%; opacity: 0; }
+  15% { opacity: 1; }
+  100% { bottom: 130%; opacity: 0; }
+}
+
+.r3 {
+  top: 20%;
+  right: -30%;
+  transform: rotate(-160deg) scale(0.85);
+  animation: fly3 5s linear infinite;
+  animation-delay: 3s;
+}
+
+@keyframes fly3 {
+  0% { right: -30%; opacity: 0; }
+  10% { opacity: 1; }
+  100% { right: 130%; top: 60%; opacity: 0; }
+}
+
+.r4 {
+  bottom: 15%;
+  left: -40%;
+  transform: rotate(15deg) scale(0.7);
+  animation: fly4 9s linear infinite;
+  animation-delay: 4s;
+}
+
+@keyframes fly4 {
+  0% { left: -40%; opacity: 0; }
+  20% { opacity: 0.8; }
+  100% { left: 140%; opacity: 0; }
+}
