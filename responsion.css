@@ -88,8 +88,5 @@
   .coming {
     letter-spacing: 3px;
   }
-
-  .rocket {
-    display: none; /* avoid clutter */
-  }
 }
+
